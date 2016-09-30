@@ -9,7 +9,9 @@ namespace TriangleLib
 {
     public class Triangle
     {
-        double sideAB, sideBC, sideAC;
+        double sideAB;
+        double sideBC;
+        double sideAC;
         Triangle(double x, double y, double z)
         {
             this.sideAB = x;
@@ -48,7 +50,7 @@ namespace TriangleLib
             double side3 = side1 * Math.Sin(angle2 * Math.PI / 180) / Math.Sin(angle3);
             return new Triangle(side1, side2, side3);
         }
-        public double CalcTriangleArea()
+        public double GetArea()
         {
             double p = (sideAB + sideAC + sideBC) / 2;
             return Math.Sqrt(p * (p - sideAB) * (p - sideAC) * (p - sideBC));

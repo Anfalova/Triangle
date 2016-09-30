@@ -9,7 +9,9 @@ namespace Triangle.Test
         [ExpectedException(typeof(ArgumentException), "Side of triangle can't be null or negative.")]
         public void MakeFromThreeSides_NullOrNegativeSide_ExceptionThrown()
         {
-            double a = 0, b = 5, c = 5;
+            double a = 0;
+            double b = 5;
+            double c = 5;
             TriangleLib.Triangle.MakeFromThreeSides(a, b, c);
         }
 
@@ -17,22 +19,28 @@ namespace Triangle.Test
         [ExpectedException(typeof(ArgumentException), "Triangle Rule is not satisfied.")]
         public void MakeFromThreeSides_NoTriangle_ExceptionThrown()
         {
-            double a = 1, b = 1, c = 100000;
+            double a = 1;
+            double b = 1;
+            double c = 100000;
             TriangleLib.Triangle.MakeFromThreeSides(a, b, c);
         }
 
         [TestMethod]
-        public void CalcTriangleArea_ThreeSides_AreaCalculatedCorrectly()
+        public void GetArea_ThreeSides_AreaCalculatedCorrectly()
         {
-            double a = 3, b = 4, c = 5;
-            Assert.AreEqual(6, TriangleLib.Triangle.MakeFromThreeSides(a, b, c).CalcTriangleArea());
+            double a = 3;
+            double b = 4;
+            double c = 5;
+            Assert.AreEqual(6, TriangleLib.Triangle.MakeFromThreeSides(a, b, c).GetArea());
         }
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentException), "Angle of triangle can't be null or negative.")]
         public void MakeFromTwoSidesAndAngle_NullOrNegativeAngle_ExceptionThrown()
         {
-            double a = 5, b = 5, angle = -1;
+            double a = 5;
+            double b = 5;
+            double angle = -1;
             TriangleLib.Triangle.MakeFromTwoSidesAndAngle(a, b, angle);
         }
 
@@ -40,7 +48,9 @@ namespace Triangle.Test
         [ExpectedException(typeof(ArgumentException), "Angle of triangle can't be  more than 180 degrees.")]
         public void MakeFromTwoSidesAndAngle_MoreThan180Angle_ExceptionThrown()
         {
-            double a = 5, b = 5, angle = 278;
+            double a = 5;
+            double b = 5;
+            double angle = 278;
             TriangleLib.Triangle.MakeFromTwoSidesAndAngle(a, b, angle);
         }
 
@@ -48,22 +58,28 @@ namespace Triangle.Test
         [ExpectedException(typeof(ArgumentException), "Side of triangle can't be null or negative.")]
         public void MakeFromTwoSidesAndAngle_NullOrNegativeSide_ExceptionThrown()
         {
-            double a = 5, b = -5, angle = 90;
+            double a = 5;
+            double b = -5;
+            double angle = 90;
             TriangleLib.Triangle.MakeFromTwoSidesAndAngle(a, b, angle);
         }
 
         [TestMethod]
-        public void CalcTriangleArea_TwoSidesAndAngle_AreaCalculatedCorrectly()
+        public void GetArea_TwoSidesAndAngle_AreaCalculatedCorrectly()
         {
-            double a = 3, b = 4, angle = 90;
-            Assert.AreEqual(6, TriangleLib.Triangle.MakeFromTwoSidesAndAngle(a, b, angle).CalcTriangleArea());
+            double a = 3;
+            double b = 4;
+            double angle = 90;
+            Assert.AreEqual(6, TriangleLib.Triangle.MakeFromTwoSidesAndAngle(a, b, angle).GetArea());
         }
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentException), "Side of triangle can't be null or negative.")]
         public void MakeFromTwoAnglesAndSide_NullOrNegativeSide_ExceptionThrown()
         {
-            double a = -5, angle1 = 45, angle2 = 90;
+            double a = -5;
+            double angle1 = 45;
+            double angle2 = 90;
             TriangleLib.Triangle.MakeFromTwoAnglesAndSide(angle1, angle2, a);
         }
 
@@ -71,7 +87,9 @@ namespace Triangle.Test
         [ExpectedException(typeof(ArgumentException), "Angle of triangle can't be null or negative.")]
         public void MakeFromTwoAnglesAndSide_NullOrNegativeAngle_ExceptionThrown()
         {
-            double a = 5, angle1 = -45, angle2 = 90;
+            double a = 5;
+            double angle1 = -45;
+            double angle2 = 90;
             TriangleLib.Triangle.MakeFromTwoAnglesAndSide(angle1, angle2, a);
         }
 
@@ -79,15 +97,19 @@ namespace Triangle.Test
         [ExpectedException(typeof(ArgumentException), "The sum of angles of a triangle must be less than 180 degrees.")]
         public void MakeFromTwoAnglesAndSide_SumOfAnglesIsMoreThan180_ExceptionThrown()
         {
-            double a = 5, angle1 = 99, angle2 = 90;
+            double a = 5;
+            double angle1 = 99;
+            double angle2 = 90;
             TriangleLib.Triangle.MakeFromTwoAnglesAndSide(angle1, angle2, a);
         }
 
         [TestMethod]
-        public void CalcTriangleArea_TwoAnglesAndSide_AreaCalculatedCorrectly()
+        public void GetleArea_TwoAnglesAndSide_AreaCalculatedCorrectly()
         {
-            double a = 4, angle1 = 60, angle2 = 60;
-            Assert.AreEqual(4*Math.Sqrt(3), TriangleLib.Triangle.MakeFromTwoAnglesAndSide(angle1, angle2, a).CalcTriangleArea());
+            double a = 4;
+            double angle1 = 60;
+            double angle2 = 60;
+            Assert.AreEqual(4*Math.Sqrt(3), TriangleLib.Triangle.MakeFromTwoAnglesAndSide(angle1, angle2, a).GetArea());
         }
 
 
